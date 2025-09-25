@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import swal from 'sweetalert';
 const ProductCreate = () => {
 
     const handleSubmitBtn = (e) => {
@@ -14,19 +14,27 @@ const ProductCreate = () => {
         const taste = form.taste.value
         const description = form.description.value
         const photo = form.photo.value
-        const data = {name,supplier,category,price,taste,description,photo}
+        const data = { name, supplier, category, price, taste, description, photo }
         console.log(data)
-        fetch('http://localhost:3000/product',{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:3000/product', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    swal({
+                        title: "Good job!",
+                        text: "Your product has been created.",
+                        icon: "success",
+                        button: "Add Product",
+                    });
+                }
+            })
     }
 
 
