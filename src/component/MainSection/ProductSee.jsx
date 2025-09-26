@@ -46,7 +46,7 @@ const ProductSee = ({ coffeeProduct,setCoffee,coffee }) => {
     }
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
+            <div className="card bg-base-100 w-full shadow-sm">
                 <figure className="px-10 pt-10">
                     <img
                         src={photo}

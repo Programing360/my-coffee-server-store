@@ -9,6 +9,8 @@ import MainSection from './component/MainSection/MainSection';
 import UpdateCoffee from './component/UpdateCoffee/UpdateCoffee';
 import AuthProvider from './component/Provider/AuthProvider';
 import SignIN from './component/SignIn/SignIN';
+import Login from './component/Login/Login';
+import UserInformation from './component/UserInformation/UserInformation';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,17 @@ const router = createBrowserRouter([
   {
     path:'/signIn',
     Component:SignIN
+  },
+  {
+    path:'/login',
+    Component:Login
+  },
+  {
+    path:'/user',
+    loader:() => fetch('http://localhost:3000/signIn'),
+    Component:UserInformation
   }
-
+  
 ]);
 
 

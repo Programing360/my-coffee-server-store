@@ -14,7 +14,7 @@ const MainSection = () => {
     return (
         <div className='my-28'>
             <h1 className="text-2xl text-center mb-4 font-bold">Product View</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 container mx-auto w-11/12 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 container mx-auto w-full '>
                 {
                     coffee.map(product => <ProductSee key={product._id} coffeeProduct={product} coffee={coffee} setCoffee={setCoffee} ></ProductSee>)
                 }
